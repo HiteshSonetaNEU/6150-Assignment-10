@@ -1,0 +1,32 @@
+/* DailyForecast.css */
+.card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    margin-bottom: 20px;
+    height:200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:300px;
+  }
+  
+  .card-title {
+    color: #007bff;
+  }
+  
+  .card-text {
+    color: #6c757d;
+  }
+  .link {
+    text-decoration: none;
+}
+
+  
+  @media (max-width: 576px) {
+    /* Styles for small screens (up to 576px) */
+    .card {
+      min-width: auto; /* Remove fixed width for small screens */
+      margin-right: 0; /* Remove right margin for better spacing on small screens */
+    }
+  }
+  

@@ -1,0 +1,37 @@
+/* HourlyForecast.css */
+.hourly-forecast-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .hourly-card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    margin-bottom: 20px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+  }
+  
+  .hourly-card h2 {
+    margin-bottom: 10px;
+  }
+  
+  .hourly-card p {
+    margin: 5px 0;
+  }
+  
+  @media (max-width: 576px) {
+    /* Styles for small screens (up to 576px) */
+    .hourly-card {
+      min-width: auto;
+      margin-right: 0;
+    }
+  }
+  
