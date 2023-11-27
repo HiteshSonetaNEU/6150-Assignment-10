@@ -1,16 +1,18 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { DateTime } from 'luxon';
 import { WiDaySunny, WiCloud, WiDayRain, WiDaySnow } from 'weather-icons-react';
 import './HourlyForecast.css';
 
 const HourlyForecast = () => {
   const location = useLocation();
-  const { data } = location.state;
+  const { data,da } = location.state;
+  const date = DateTime.fromISO(da, { zone: 'America/New_York' });
 
-  const temp = data[0].dt_txt.slice(0, 10);
-  const date = new Date(temp);
-  const dayName = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(date);
-  const monthName = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(date);
+        const dayName = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(date);
+        const monthName = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(date);
+
+  
   function convertTimestampToESTTime(timestamp) {
     const estOffset = -5 * 60 * 60; // Eastern Standard Time (EST) offset in seconds
     const estTimestamp = timestamp + estOffset;
@@ -37,7 +39,7 @@ const HourlyForecast = () => {
 
   return (
     <div className="hourly-forecast-container">
-      <h3>{`${dayName}, ${monthName} ${date.getDate()}`}</h3>
+      <h3>{`${dayName}, ${monthName} ${date.c.day}`}</h3>
       {data.map((item, index) => {
         return (
           <div key={index} className="hourly-card">

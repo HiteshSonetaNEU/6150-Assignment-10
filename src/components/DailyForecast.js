@@ -54,7 +54,6 @@ const DailyForecast = ({ forecastData }) => {
       case 'Rain':
         return <WiDayRain />;
       case 'Clouds':
-        console.log("here")
         return <WiCloud />;
       case 'Snow':
         return <WiDaySnow />;
@@ -67,6 +66,7 @@ const DailyForecast = ({ forecastData }) => {
     <Row>
       {Object.keys(convertedData).map((dateKey) => {
         const entry = convertedData[dateKey];
+        convertedData[dateKey].da= dateKey
         const date = DateTime.fromISO(dateKey, { zone: 'America/New_York' });
 
         const dayName = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(date);
