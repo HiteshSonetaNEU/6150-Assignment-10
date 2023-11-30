@@ -13,10 +13,6 @@ const WeatherForecast = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const [currentTempResponse, forecastResponse] = await Promise.all([
-        //   axios.get('https://api.openweathermap.org/data/2.5/weather?q=boston&units=metric&APPID=767ca9c391439e1addd64f3fcbbf1033'),
-        //   axios.get('https://api.openweathermap.org/data/2.5/forecast?q=boston&units=metric&APPID=767ca9c391439e1addd64f3fcbbf1033')
-        // ]);
         const [currentTempResponse, forecastResponse] = await Promise.all([
             axios.get('https://api.openweathermap.org/data/2.5/weather?q=boston&units=metric&APPID=c2592cac55bd26e750168cefc407d089'),
             axios.get('https://api.openweathermap.org/data/2.5/forecast?q=boston&units=metric&APPID=c2592cac55bd26e750168cefc407d089')
